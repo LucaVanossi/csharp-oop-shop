@@ -6,3 +6,5 @@ Prodotto Moto = new Prodotto("Honda", "ADV 350", 6990, 1537.80);
 
 Console.WriteLine(Moto.VisualizzaDati());
 
+
+

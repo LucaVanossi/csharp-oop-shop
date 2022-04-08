@@ -25,8 +25,15 @@ namespace C_Sharp_shop
         private int GeneraProdotto()
         {
             Random NumeroCasuale = new Random();
-            return NumeroCasuale.Next(10000);
+            return NumeroCasuale.Next(10000000);
         }
+
+        public void SetNome()
+        {
+            this.Nome = Nome;
+        }
+
+
         private string GetNome()
         {
             return Nome;
@@ -58,14 +65,21 @@ namespace C_Sharp_shop
             return (Codice.ToString() + " - " + Nome);
         }
         
+        private string CodiceOtto ()
+        {
+            return Codice.ToString().PadLeft(8, '0');
+        }
         public string VisualizzaDati()
         {
-            string InfoProdotto = (NomeEsteso() + Environment.NewLine + "Il codice del prodotto è: " + Codice + Environment.NewLine + 
+            string InfoProdotto = (NomeEsteso() + Environment.NewLine + "Il codice a 8 è: " + CodiceOtto() + Environment.NewLine +
+                "Il codice del prodotto è: " + Codice + Environment.NewLine + 
                 "Il nome del prodotto è: " + Nome + Environment.NewLine + "Descrizione: " + Descrizione
                 + Environment.NewLine + "Il Prezzo netto è: " + PrezzoSenzaIva() + Environment.NewLine 
                 + "Iva: " + Iva + Environment.NewLine + "Prezzo compreso d'Iva: " + Prezzo);
             return InfoProdotto;
         }
+
+
 
 
     }
